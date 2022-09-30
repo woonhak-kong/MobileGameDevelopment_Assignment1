@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour
@@ -23,7 +24,7 @@ public class MainSceneManager : MonoBehaviour
 
     public void OnStartBtn()
     {
-
+        SceneManager.LoadScene("PlayScene", LoadSceneMode.Additive);
     }
 
     public void OnInstructionBtn()
