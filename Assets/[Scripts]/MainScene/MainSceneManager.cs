@@ -24,7 +24,7 @@ public class MainSceneManager : MonoBehaviour
 
     public void OnStartBtn()
     {
-        SceneManager.LoadScene("PlayScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
     }
 
     public void OnInstructionBtn()
