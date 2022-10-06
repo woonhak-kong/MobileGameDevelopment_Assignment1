@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField]
     private float projectileSpeed;
+    [SerializeField]
+    private float power;
 
     // Start is called before the first frame update
     void Start()

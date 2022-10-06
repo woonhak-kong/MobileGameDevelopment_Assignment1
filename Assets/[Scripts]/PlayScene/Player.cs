@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject projectilePrefab;
+    [SerializeField]
+    private Weapon weapon;
     // Start is called before the first frame update
     void Start()
     {
-        
+        weapon = GetComponentInChildren<Weapon>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        //Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
     }
 }
