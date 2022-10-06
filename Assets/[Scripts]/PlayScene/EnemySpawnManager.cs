@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
-    [SerializeField]
-    private Transform[] SpawnPoint;
+    public static EnemySpawnManager Instance { get; private set; }
 
     public GameObject[] EnemyPrefabs;
+    public GameObject enemyParent;
 
     [SerializeField]
+    private Transform[] SpawnPoint;
+    [SerializeField]
     private float SpawnRate;
-    public static EnemySpawnManager Instance { get; private set; }
+    [SerializeField]
+    LinkedList<GameObject> EnemyList;
 
     private void Awake()
     {
@@ -27,7 +30,7 @@ public class EnemySpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        EnemyList = new LinkedList<GameObject>();
         StartCoroutine(SpawnEnemies());
     }
 
@@ -44,8 +47,37 @@ public class EnemySpawnManager : MonoBehaviour
             yield return new WaitForSeconds(SpawnRate);
             int randomRangeForSpawn = Random.Range(0, SpawnPoint.Length);
             //print("WaitAndPrint " + Time.time);
-            Instantiate(EnemyPrefabs[0], SpawnPoint[randomRangeForSpawn].position, EnemyPrefabs[0].transform.rotation);
+            GameObject enemy = Instantiate(EnemyPrefabs[0], SpawnPoint[randomRangeForSpawn].position, EnemyPrefabs[0].transform.rotation);
+            enemy.transform.SetParent(enemyParent.transform);
+            EnemyList.AddLast(enemy);
+            SortEnemyListByTransport();
         }
+    }
+
+    private void SortEnemyListByTransport()
+    {
+        float xPosition = float.MaxValue;
+        GameObject leftmostEnemy = null;
+        foreach(GameObject enemy in EnemyList)
+        {
+            if (enemy.transform.position.x < xPosition)
+            {
+                xPosition = enemy.transform.position.x;
+                leftmostEnemy = enemy;
+            }
+        }
+
+        if (leftmostEnemy != null)
+        {
+            EnemyList.Remove(leftmostEnemy);
+            EnemyList.AddFirst(leftmostEnemy);
+        }
+
+    }
+
+    public Vector3 GetLeftmostEnemyPosition()
+    {
+        return EnemyList.First.Value.transform.position;
     }
     
 }
