@@ -79,5 +79,10 @@ public class EnemySpawnManager : MonoBehaviour
     {
         return EnemyList.First.Value.transform.position;
     }
+
+    public void RemoveEnemyFromList(GameObject enemy)
+    {
+        EnemyList.Remove(enemy);
+    }
     
 }

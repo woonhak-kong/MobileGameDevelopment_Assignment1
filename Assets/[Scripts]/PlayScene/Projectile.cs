@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float projectileSpeed;
     [SerializeField]
-    private float power;
+    private float power = 1;
 
     private Vector2 direction = Vector2.right;
 
@@ -35,10 +35,16 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("collide with " + collision.gameObject);
+        Destroy(this.gameObject);
     }
 
     public void SetDirection(Vector2 direction)
     {
         this.direction = direction;
+    }
+
+    public float GetPower()
+    {
+        return power;
     }
 }

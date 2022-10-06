@@ -28,5 +28,16 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Hit :" + gameObject.name);
+        Damaged(collision.GetComponent<Projectile>().GetPower());
+    }
+
+    private void Damaged(float damage)
+    {
+        Hp -= damage;
+        if (Hp <= 0)
+        {
+            EnemySpawnManager.Instance.RemoveEnemyFromList(this.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 }
