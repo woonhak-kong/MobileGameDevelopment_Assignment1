@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,11 +37,6 @@ public class Projectile : MonoBehaviour
     {
         Debug.Log("collide with " + collision.gameObject);
         Destroy(this.gameObject);
-    }
-
-    public void SetDirection(Vector2 direction)
-    {
-        this.direction = direction;
     }
 
     public float GetPower()
