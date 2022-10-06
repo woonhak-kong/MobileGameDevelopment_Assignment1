@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61624458b8aedf14bbb5619fe3a00021
+guid: 4d4e8399197ff8b4091e82ac3d1920bc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,34 +107,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dungeonui.v1_0
+      name: bullet_set_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 33
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea0929d84122a44589f19ccec23694b
+      internalID: -1106871964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_set_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 33
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470895fcc3f28d545af336ad1c08359d
+      internalID: 601248248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_set_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 33
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51b29bf13d9a3e48aae82f060314845
+      internalID: -1909304608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_set_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 17
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa75771419ad41e46becfbbb096c9471
+      internalID: 1949420892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_set_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 17
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6c1dffea13b4046b19983c2c391daa
+      internalID: 1518929857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_set_5
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 17
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 4, z: 3, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557107ba670d77d4b8d9d2adcac30956
+      internalID: 730997276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_set_7
       rect:
         serializedVersion: 2
         x: 16
-        y: 214
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 5, y: 6, z: 4, w: 6}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95ec67273f1dcac459d6ac2add4f2756
-      internalID: -1202486350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonui.v1_1
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 214
-        width: 32
-        height: 22
+        y: 2
+        width: 20
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,155 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09b59a86e2368464ca435435c9ab6173
-      internalID: 1393695710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonui.v1_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 214
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00f94c7f0ccb07e49943a333d69ed060
-      internalID: -196572312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonui.v1_3
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 214
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4d66bd6cac20f74094000475eeb589d
-      internalID: -202418005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonui.v1_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 332
-        width: 40
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 7, y: 7, z: 7, w: 8}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc40e56818ccdea43946bf04cb592b61
-      internalID: -1415647459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonui.v1_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 333
-        width: 40
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 6, y: 5, z: 6, w: 6}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5c84b6f8b1987043aa51f0eef156fcf
-      internalID: -362129018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonui.v1_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 300
-        width: 40
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24f19c1e3985c7c48b00fd639643cfe0
-      internalID: -1477108672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonui.v1_7
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 300
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 8, z: 8, w: 8}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88a8138d306dce7448f3685aada229ea
-      internalID: 948927413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonui.v1_8
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 268
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 3, y: 2, z: 3, w: 2}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd56a589c3213ae4aa52839b5c1cabbb
-      internalID: 737111978
+      spriteID: 0dfdf29c9db833c44bcd0a3fdd53cb60
+      internalID: 2081669840
       vertices: []
       indices: 
       edges: []
@@ -306,15 +264,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dungeonui.v1_1: 1393695710
-      dungeonui.v1_3: -202418005
-      dungeonui.v1_7: 948927413
-      dungeonui.v1_6: -1477108672
-      dungeonui.v1_5: -362129018
-      dungeonui.v1_8: 737111978
-      dungeonui.v1_0: -1202486350
-      dungeonui.v1_2: -196572312
-      dungeonui.v1_4: -1415647459
+      bullet_set_5: 730997276
+      bullet_set_0: -1106871964
+      bullet_set_8: -2038595353
+      bullet_set_4: 1518929857
+      bullet_set_1: 601248248
+      bullet_set_2: -1909304608
+      bullet_set_7: 2081669840
+      bullet_set_3: 1949420892
+      bullet_set_6: -1938949042
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

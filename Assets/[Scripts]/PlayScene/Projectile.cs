@@ -23,4 +23,9 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(Vector2.right * projectileSpeed * Time.fixedDeltaTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("collide with " + collision.gameObject);
+    }
 }
