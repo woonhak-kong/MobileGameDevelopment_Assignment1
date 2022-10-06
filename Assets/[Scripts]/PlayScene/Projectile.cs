@@ -24,6 +24,10 @@ public class Projectile : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Translate(Vector2.right * projectileSpeed * Time.fixedDeltaTime);
+        if (transform.position.x > 30.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
