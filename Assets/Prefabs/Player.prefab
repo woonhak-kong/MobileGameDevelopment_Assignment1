@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1818236602}
   - component: {fileID: 1818236603}
   - component: {fileID: 1818236604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8337406292300907595, guid: 95c76876ca4126d40b2e937044f69182, type: 3}
+  bulletsParrent: {fileID: 0}
   muzzlePosition: {fileID: 1842107676}
   shootingDelay: 1
 --- !u!1 &1842107675
@@ -110,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1842107676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +144,7 @@ GameObject:
   - component: {fileID: 1423790773443918217}
   - component: {fileID: 1423790773443918216}
   - component: {fileID: 1804677428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

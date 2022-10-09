@@ -31,7 +31,7 @@ public class EnemySpawnManager : MonoBehaviour
     void Start()
     {
         EnemyList = new LinkedList<GameObject>();
-        StartCoroutine(SpawnEnemies());
+        //StartCoroutine(SpawnEnemies());
     }
 
     // Update is called once per frame
@@ -40,17 +40,34 @@ public class EnemySpawnManager : MonoBehaviour
         
     }
 
+    public void StartSpawnEnemy()
+    {
+        StartCoroutine(SpawnEnemies());
+    }
+
     IEnumerator SpawnEnemies()
     {
-        while (true)
+        while (LevelManager.Instance.IsStarting)
         {
             yield return new WaitForSeconds(SpawnRate);
             int randomRangeForSpawn = Random.Range(0, SpawnPoint.Length);
             //print("WaitAndPrint " + Time.time);
-            GameObject enemy = Instantiate(EnemyPrefabs[0], SpawnPoint[randomRangeForSpawn].position, EnemyPrefabs[0].transform.rotation);
-            enemy.transform.SetParent(enemyParent.transform);
-            EnemyList.AddLast(enemy);
-            SortEnemyListByTransport();
+            GameObject enemy = LevelManager.Instance.DequeueEnemyFromQueue();
+            if (enemy != null)
+            {
+                //GameObject enemy = Instantiate(EnemyPrefabs[0], SpawnPoint[randomRangeForSpawn].position, EnemyPrefabs[0].transform.rotation);
+                enemy.transform.position = SpawnPoint[randomRangeForSpawn].position;
+                enemy.transform.rotation = enemy.transform.rotation;
+                enemy.transform.SetParent(enemyParent.transform);
+                enemy.SetActive(true);
+                EnemyList.AddLast(enemy);
+                SortEnemyListByTransport();
+            }
+            else
+            {
+
+            }
+            
         }
     }
 
@@ -84,5 +101,10 @@ public class EnemySpawnManager : MonoBehaviour
     {
         EnemyList.Remove(enemy);
     }
-    
+
+    public int GetEnemyListCount()
+    {
+        return EnemyList.Count;
+    }
+
 }

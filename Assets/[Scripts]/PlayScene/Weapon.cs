@@ -32,13 +32,17 @@ public class Weapon : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(shootingDelay);
+            if (EnemySpawnManager.Instance.GetEnemyListCount() <= 0)
+            {
+                continue;
+            }
 
             Vector2 direction = EnemySpawnManager.Instance.GetLeftmostEnemyPosition() - muzzlePosition.transform.position;
             direction.Normalize();
 
             // rotating weapon and shooting
             float angle = Vector2.SignedAngle(transform.right, direction);
-            Debug.Log("weapon " + angle);
+            //Debug.Log("weapon " + angle);
             transform.Rotate(Vector3.forward, angle);
 
             GameObject bullet = Instantiate(projectilePrefab, muzzlePosition.position, muzzlePosition.rotation);
