@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float projectileSpeed;
     [SerializeField]
-    private float power = 1;
+    private float power;
 
     private Vector2 direction = Vector2.right;
 
@@ -42,5 +42,10 @@ public class Projectile : MonoBehaviour
     public float GetPower()
     {
         return power;
+    }
+
+    public void SetPower(float power)
+    {
+        this.power = power;
     }
 }

@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
 
     private void BuildEnemies()
     {
-        int numOfEnemies = 10 + Level * 2;
+        int numOfEnemies = 15 + Level * 2;
         int StrongestEnemyIdx = Level / 10;
         float ratioOfEnemy = Level < 10 ? 1.0f : Level % 10;
         for (int i = 0; i < numOfEnemies; i++)

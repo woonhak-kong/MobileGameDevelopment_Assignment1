@@ -42,4 +42,14 @@ public class PlaySceneUIManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
+
+    public void OnClickPowerUp()
+    {
+        FindObjectOfType<Player>().WeaponPowerUp();
+    }
+
+    public void OnClickFireRateUp()
+    {
+        FindObjectOfType<Player>().WeaponFireRateUp();
+    }
 }

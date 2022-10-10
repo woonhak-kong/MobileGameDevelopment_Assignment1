@@ -12,6 +12,8 @@ public class Weapon : MonoBehaviour
     private Transform muzzlePosition;
     [SerializeField]
     private float shootingDelay;
+    [SerializeField]
+    private float power;
 
     
 
@@ -47,6 +49,23 @@ public class Weapon : MonoBehaviour
 
             GameObject bullet = Instantiate(projectilePrefab, muzzlePosition.position, muzzlePosition.rotation);
             bullet.transform.SetParent(bulletsParrent.transform);
+            bullet.GetComponent<Projectile>().SetPower(power);
         }
+    }
+
+    public void FireRateDown()
+    {
+        
+        shootingDelay -= 0.001f;
+    }
+
+    public void SetPower(float power)
+    {
+        this.power = power;
+    }
+
+    public void PowerUp()
+    {
+        power += 0.1f;
     }
 }

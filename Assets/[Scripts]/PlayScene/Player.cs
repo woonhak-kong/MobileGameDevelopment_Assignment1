@@ -17,4 +17,14 @@ public class Player : MonoBehaviour
     {
         //Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
     }
+
+    public void WeaponPowerUp()
+    {
+        weapon.PowerUp();
+    }
+
+    public void WeaponFireRateUp()
+    {
+        weapon.FireRateDown();
+    }
 }
