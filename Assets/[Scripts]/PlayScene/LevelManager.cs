@@ -52,9 +52,16 @@ public class LevelManager : MonoBehaviour
 
     private void BuildEnemies()
     {
-        for (int i = 0; i < 10; i++)
+        int numOfEnemies = 10 + Level * 2;
+        int StrongestEnemyIdx = Level / 10;
+        float ratioOfEnemy = Level < 10 ? 1.0f : Level % 10;
+        for (int i = 0; i < numOfEnemies; i++)
         {
-            GameObject enemy = Instantiate(EnemyPrefabs[0]);
+            float randNum = Random.Range(0.0f, 1.0f);
+            // if randNum <= ratioOfEnemy => numOfEnemyType else numOfEnemyType -1
+            int enemyIdx = randNum <= ratioOfEnemy ? StrongestEnemyIdx : StrongestEnemyIdx - 1;
+
+            GameObject enemy = Instantiate(EnemyPrefabs[enemyIdx]);
             enemy.transform.SetParent(PreparedEnemies.transform);
             enemy.SetActive(false);
             enemyPreparedQueue.Enqueue(enemy);
@@ -84,11 +91,11 @@ public class LevelManager : MonoBehaviour
         {
             if (enemyPreparedQueue.Count <= 0 && EnemySpawnManager.Instance.GetEnemyListCount() <= 0)
             {
-                IsStarting = false;
+                ClearLevel();
             }
             yield return new WaitForSeconds(1.0f);
         }
-        StartCoroutine(StartLevelSequence());
+        
     }
 
     public GameObject DequeueEnemyFromQueue()
@@ -98,5 +105,14 @@ public class LevelManager : MonoBehaviour
             return enemyPreparedQueue.Dequeue();
         }
         return null;
+    }
+
+    private void ClearLevel()
+    {
+        IsStarting = false;
+        Level++;
+        EnemySpawnManager.Instance.StopAllCoroutines();
+        StartCoroutine(StartLevelSequence());
+
     }
 }

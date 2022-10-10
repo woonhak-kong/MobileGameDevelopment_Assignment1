@@ -101,7 +101,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8337406292300907595, guid: 95c76876ca4126d40b2e937044f69182, type: 3}
   bulletsParrent: {fileID: 0}
   muzzlePosition: {fileID: 1842107676}
-  shootingDelay: 1
+  shootingDelay: 0.5
 --- !u!1 &1842107675
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ Transform:
   m_Children:
   - {fileID: 1818236602}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1423790773443918216
 SpriteRenderer:

@@ -12520,7 +12520,7 @@ MonoBehaviour:
   - {fileID: 1830911624}
   - {fileID: 1940557074}
   - {fileID: 699216693}
-  SpawnRate: 1
+  SpawnRate: 0.5
 --- !u!1 &1920365490
 GameObject:
   m_ObjectHideFlags: 0
@@ -17200,7 +17200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423790773443918217, guid: 818de7a291762c54e8d8d09d6a915b46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.94
+      value: -17.3
       objectReference: {fileID: 0}
     - target: {fileID: 1423790773443918217, guid: 818de7a291762c54e8d8d09d6a915b46, type: 3}
       propertyPath: m_LocalPosition.y
