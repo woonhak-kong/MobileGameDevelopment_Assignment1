@@ -36,8 +36,22 @@ public class Enemy : MonoBehaviour
         Hp -= damage;
         if (Hp <= 0)
         {
-            EnemySpawnManager.Instance.RemoveEnemyFromList(this.gameObject);
-            Destroy(this.gameObject);
+            
+            Dead();
         }
     }
+
+    private void Dead()
+    {
+        Speed = 0;
+        EnemySpawnManager.Instance.RemoveEnemyFromList(this.gameObject);
+        GetComponent<Animator>().SetBool("dead", true);
+        GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    private void DestorySelf()
+    {
+        Destroy(this.gameObject);
+    }
+    
 }

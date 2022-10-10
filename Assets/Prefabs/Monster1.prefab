@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8435692037034806058}
   - component: {fileID: 8435692037034806061}
   - component: {fileID: 8435692037034806060}
+  - component: {fileID: 1901849699}
   m_Layer: 7
   m_Name: Monster1
   m_TagString: Untagged
@@ -149,3 +150,23 @@ MonoBehaviour:
   Speed: 4
   Hp: 2
   Power: 1
+--- !u!95 &1901849699
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435692037034806049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2430ec6b299cdf4cbe8ff6d0e7b1949, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
