@@ -36,6 +36,10 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("collide with " + collision.gameObject);
+        if (collision.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Enemy>().Damaged(power);
+        }
         Destroy(this.gameObject);
     }
 

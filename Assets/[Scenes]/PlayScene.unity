@@ -10027,7 +10027,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.738
+  m_Value: 0.707
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -15752,6 +15752,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1818236604, guid: 818de7a291762c54e8d8d09d6a915b46, type: 3}
+      propertyPath: shootingDelay
+      value: 0.89
+      objectReference: {fileID: 0}
     - target: {fileID: 1818236604, guid: 818de7a291762c54e8d8d09d6a915b46, type: 3}
       propertyPath: bulletsParrent
       value: 

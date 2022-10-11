@@ -39,7 +39,7 @@ public class EnemySpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void StartSpawnEnemy()
@@ -109,5 +109,11 @@ public class EnemySpawnManager : MonoBehaviour
     {
         return EnemyList.Count;
     }
+
+    public LinkedList<GameObject> GetEnemyList()
+    {
+        return EnemyList;
+    }
+
 
 }

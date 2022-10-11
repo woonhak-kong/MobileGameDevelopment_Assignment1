@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public GameObject CoinPrefab;
     public GameObject CoinParent;
 
-    public int Level { get; set; } = 9;
+    public int Level { get; set; } = 1;
 
     public int Coin { get; set; } = 0;
 
@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
 
     private void BuildEnemies()
     {
-        int numOfEnemies = 15 + (Level/5) * 2;
+        int numOfEnemies = 100 + (Level/5) * 2;
         int StrongestEnemyIdx = Level / 10;
         float ratioOfEnemy = Level < 10 ? 1.0f : Level % 10;
         for (int i = 0; i < numOfEnemies; i++)

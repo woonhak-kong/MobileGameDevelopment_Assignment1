@@ -56,7 +56,7 @@ public class Weapon : MonoBehaviour
     public void FireRateDown()
     {
         
-        shootingDelay -= 0.001f;
+        shootingDelay -= 0.002f;
     }
 
     public void SetPower(float power)
