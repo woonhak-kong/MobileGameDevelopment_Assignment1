@@ -31,6 +31,13 @@ public class PlaySceneUIManager : MonoBehaviour
     public void OnSettingBtn()
     {
         GameEndPannel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void OnClickBackBtn()
+    {
+        GameEndPannel.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void OnPauseBtn()
