@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public GameObject CoinPrefab;
     public GameObject CoinParent;
 
-    public int Level { get; set; } = 1;
+    public int Level { get; set; } = 9;
 
     public int Coin { get; set; } = 0;
 
@@ -64,7 +64,6 @@ public class LevelManager : MonoBehaviour
             float randNum = Random.Range(0.0f, 1.0f);
             // if randNum <= ratioOfEnemy => numOfEnemyType else numOfEnemyType -1
             int enemyIdx = randNum <= ratioOfEnemy ? StrongestEnemyIdx : StrongestEnemyIdx - 1;
-
             GameObject enemy = Instantiate(EnemyPrefabs[enemyIdx]);
             enemy.transform.SetParent(PreparedEnemies.transform);
             enemy.SetActive(false);

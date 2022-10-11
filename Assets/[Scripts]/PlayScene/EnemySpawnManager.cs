@@ -6,7 +6,7 @@ public class EnemySpawnManager : MonoBehaviour
 {
     public static EnemySpawnManager Instance { get; private set; }
 
-    public GameObject[] EnemyPrefabs;
+    //public GameObject[] EnemyPrefabs;
     public GameObject enemyParent;
 
     [SerializeField]
