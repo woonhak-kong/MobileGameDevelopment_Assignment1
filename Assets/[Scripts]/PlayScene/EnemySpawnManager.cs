@@ -49,10 +49,19 @@ public class EnemySpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
+        int[] temp = new int[2] {-1,-1};
         while (LevelManager.Instance.IsStarting)
         {
+            int randomRangeForSpawn = 0;
             yield return new WaitForSeconds(SpawnRate);
-            int randomRangeForSpawn = Random.Range(0, SpawnPoint.Length);
+            do
+            {
+                randomRangeForSpawn = Random.Range(0, SpawnPoint.Length);
+
+            }
+            while (temp[0] == randomRangeForSpawn || temp[1] == randomRangeForSpawn);
+            temp[0] = temp[1];
+            temp[1] = randomRangeForSpawn;
             //print("WaitAndPrint " + Time.time);
             GameObject enemy = LevelManager.Instance.DequeueEnemyFromQueue();
             if (enemy != null)
