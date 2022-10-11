@@ -7,8 +7,12 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance { get; private set; }
     public GameObject[] EnemyPrefabs;
     public GameObject PreparedEnemies;
+    public GameObject CoinPrefab;
+    public GameObject CoinParent;
 
     public int Level { get; set; } = 1;
+
+    public int Coin { get; set; } = 0;
 
     public bool _isStarting = false;
     public bool IsStarting { get => _isStarting; set => _isStarting = value ; }
@@ -52,7 +56,7 @@ public class LevelManager : MonoBehaviour
 
     private void BuildEnemies()
     {
-        int numOfEnemies = 15 + Level * 2;
+        int numOfEnemies = 15 + (Level/5) * 2;
         int StrongestEnemyIdx = Level / 10;
         float ratioOfEnemy = Level < 10 ? 1.0f : Level % 10;
         for (int i = 0; i < numOfEnemies; i++)
@@ -85,6 +89,21 @@ public class LevelManager : MonoBehaviour
         //yield return null;
     }
 
+    private IEnumerator ClearAwards()
+    {
+        int numOfCoins = Level * 10;
+        while(numOfCoins > 0)
+        {
+            GameObject coin = Instantiate(CoinPrefab, CoinParent.transform);
+            coin.transform.position = new Vector2(Random.Range(-10.0f, 17.0f), -2.0f);
+            numOfCoins--;
+            coin.GetComponent<CoinDropped>().SetCoinValue(10);
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return null;
+        StartCoroutine(StartLevelSequence());
+    }
+
     private IEnumerator TrackEnemyLeft()
     {
         while(IsStarting)
@@ -112,7 +131,14 @@ public class LevelManager : MonoBehaviour
         IsStarting = false;
         Level++;
         EnemySpawnManager.Instance.StopAllCoroutines();
-        StartCoroutine(StartLevelSequence());
+        StartCoroutine(ClearAwards());
+        
 
+    }
+
+    public void AddCoin(int coin)
+    {
+        Coin += coin;
+        FindObjectOfType<PlaySceneUIManager>().SetCoinText(this.Coin);
     }
 }

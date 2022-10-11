@@ -150,6 +150,7 @@ MonoBehaviour:
   Speed: 3.1
   Hp: 2
   Power: 2
+  Coin: 2
 --- !u!95 &1901849699
 Animator:
   serializedVersion: 4

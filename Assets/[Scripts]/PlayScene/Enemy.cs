@@ -5,29 +5,20 @@ using UnityEngine;
 [System.Serializable]
 public class Enemy : MonoBehaviour
 {
+
     [SerializeField]
     protected float Speed;
     [SerializeField]
     protected float Hp;
     [SerializeField]
     protected float Power;
+    [SerializeField]
+    protected int Coin;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit :" + gameObject.name);
+        //Debug.Log("Hit :" + gameObject.name);
         Damaged(collision.GetComponent<Projectile>().GetPower());
     }
 
@@ -47,10 +38,17 @@ public class Enemy : MonoBehaviour
         EnemySpawnManager.Instance.RemoveEnemyFromList(this.gameObject);
         GetComponent<Animator>().SetBool("dead", true);
         GetComponent<BoxCollider2D>().enabled = false;
+        GameObject coin = Instantiate(LevelManager.Instance.CoinPrefab, LevelManager.Instance.CoinParent.transform);
+        coin.transform.position = transform.position;
+        coin.GetComponent<CoinDropped>().SetCoinValue(Coin);
+        //LevelManager.Instance.AddCoin(Coin);
     }
 
+
+    // call by animation event
     private void DestorySelf()
     {
+        
         Destroy(this.gameObject);
     }
     

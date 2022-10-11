@@ -16,6 +16,8 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField]
     LinkedList<GameObject> EnemyList;
 
+    private int orderInLayer = 0;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -60,6 +62,7 @@ public class EnemySpawnManager : MonoBehaviour
                 enemy.transform.rotation = enemy.transform.rotation;
                 enemy.transform.SetParent(enemyParent.transform);
                 enemy.SetActive(true);
+                enemy.GetComponent<Renderer>().sortingOrder = orderInLayer++;
                 EnemyList.AddLast(enemy);
                 SortEnemyListByTransport();
             }

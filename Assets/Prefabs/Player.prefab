@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818236601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36, y: -0.62, z: 0}
+  m_LocalPosition: {x: 0.4, y: -0.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1330760707
+  m_SortingLayerID: -693441927
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -946477646, guid: d3dadd2e4956eda409f4700efd56e647, type: 3}
@@ -101,7 +101,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8337406292300907595, guid: 95c76876ca4126d40b2e937044f69182, type: 3}
   bulletsParrent: {fileID: 0}
   muzzlePosition: {fileID: 1842107676}
-  shootingDelay: 0.5
+  shootingDelay: 1
   power: 1
 --- !u!1 &1842107675
 GameObject:
@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 1423790773443918217}
   - component: {fileID: 1423790773443918216}
   - component: {fileID: 1804677428}
+  - component: {fileID: 2055908734}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -207,9 +208,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1330760707
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: acdac507e6c5b18428d3ef7d060f5618, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c167c81144d2e64891bc064c2438157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,3 +234,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
+--- !u!95 &2055908734
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423790773443918223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2cbf349bf1532349bf7c307a036a192, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
