@@ -8,6 +8,9 @@ public class PlaySceneUIManager : MonoBehaviour
 
     public TMPro.TextMeshProUGUI CoinText;
 
+    public GameObject Pause;
+    public GameObject Resume;
+
     [SerializeField]
     private GameObject PlayPannel;
     [SerializeField]
@@ -42,12 +45,16 @@ public class PlaySceneUIManager : MonoBehaviour
 
     public void OnPauseBtn()
     {
-
+        Pause.SetActive(false);
+        Resume.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void OnResumBtn()
     {
-
+        Pause.SetActive(true);
+        Resume.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void OnToMainBtn()

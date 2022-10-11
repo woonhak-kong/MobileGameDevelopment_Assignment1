@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public GameObject ExplosionPrefab;
+
     [SerializeField]
     private float projectileSpeed;
     [SerializeField]
@@ -39,7 +41,11 @@ public class Projectile : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().Damaged(power);
+
         }
+        GameObject explo = Instantiate(ExplosionPrefab);
+        explo.transform.position = transform.position;
+        
         Destroy(this.gameObject);
     }
 
