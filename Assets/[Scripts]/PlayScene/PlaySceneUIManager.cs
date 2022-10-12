@@ -8,6 +8,7 @@ public class PlaySceneUIManager : MonoBehaviour
 
     public TMPro.TextMeshProUGUI CoinText;
     public TMPro.TextMeshProUGUI ScoreText;
+    public TMPro.TextMeshProUGUI PowerUpCoinText;
 
     public GameObject Pause;
     public GameObject Resume;
@@ -23,7 +24,7 @@ public class PlaySceneUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ReviewUI();
     }
 
     // Update is called once per frame
@@ -69,7 +70,7 @@ public class PlaySceneUIManager : MonoBehaviour
             return;
         LevelManager.Instance.Coin -= PowerUpPrice;
         PowerUpPrice++;
-
+        PowerUpCoinText.text = PowerUpPrice.ToString();
         FindObjectOfType<Player>().WeaponPowerUp();
         ReviewUI();
     }
@@ -99,5 +100,6 @@ public class PlaySceneUIManager : MonoBehaviour
     {
         CoinText.text = LevelManager.Instance.Coin.ToString();
         ScoreText.text = LevelManager.Instance.Score.ToString();
+        PowerUpCoinText.text = PowerUpPrice.ToString();
     }
 }
