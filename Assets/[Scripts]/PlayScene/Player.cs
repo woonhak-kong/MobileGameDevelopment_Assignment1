@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 //using UnityEngine.UIElements;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -59,6 +60,19 @@ public class Player : MonoBehaviour
 
 #endif
 
+
+
+        if (Hp <= 0)
+        {
+            GameOver();
+        }
+
+
+    }
+
+    private void GameOver()
+    {
+        FindObjectOfType<PlaySceneUIManager>().OnSettingBtn();
     }
 
     public void WeaponPowerUp()

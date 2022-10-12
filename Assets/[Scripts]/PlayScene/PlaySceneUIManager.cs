@@ -9,6 +9,7 @@ public class PlaySceneUIManager : MonoBehaviour
     public TMPro.TextMeshProUGUI CoinText;
     public TMPro.TextMeshProUGUI ScoreText;
     public TMPro.TextMeshProUGUI PowerUpCoinText;
+    public TMPro.TextMeshProUGUI GameOverScoreText;
 
     public GameObject Pause;
     public GameObject Resume;
@@ -36,12 +37,14 @@ public class PlaySceneUIManager : MonoBehaviour
     public void OnSettingBtn()
     {
         GameEndPannel.SetActive(true);
+        GameOverScoreText.text = "Score : " + LevelManager.Instance.Score.ToString();
         Time.timeScale = 0;
     }
 
     public void OnClickBackBtn()
     {
         GameEndPannel.SetActive(false);
+        
         Time.timeScale = 1;
     }
 
