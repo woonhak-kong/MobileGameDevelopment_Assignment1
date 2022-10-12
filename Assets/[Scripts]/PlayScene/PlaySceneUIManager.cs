@@ -7,6 +7,7 @@ public class PlaySceneUIManager : MonoBehaviour
 {
 
     public TMPro.TextMeshProUGUI CoinText;
+    public TMPro.TextMeshProUGUI ScoreText;
 
     public GameObject Pause;
     public GameObject Resume;
@@ -88,9 +89,15 @@ public class PlaySceneUIManager : MonoBehaviour
     {
         CoinText.text = coin.ToString();
     }
-    
+
+    public void SetScoreText(int score)
+    {
+        ScoreText.text = "Score : " + score.ToString();
+    }
+
     public void ReviewUI()
     {
         CoinText.text = LevelManager.Instance.Coin.ToString();
+        ScoreText.text = LevelManager.Instance.Score.ToString();
     }
 }

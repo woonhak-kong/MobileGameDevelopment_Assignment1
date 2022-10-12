@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     protected float Power;
     [SerializeField]
     protected int Coin;
+    [SerializeField]
+    protected int Score;
 
     private GameObject Player;
 
@@ -74,6 +76,7 @@ public class Enemy : MonoBehaviour
         GameObject coin = Instantiate(LevelManager.Instance.CoinPrefab, LevelManager.Instance.CoinParent.transform);
         coin.transform.position = transform.position;
         coin.GetComponent<CoinDropped>().SetCoinValue(Coin);
+        LevelManager.Instance.AddScore(Score);
         Destroy(this.gameObject);
     }
     

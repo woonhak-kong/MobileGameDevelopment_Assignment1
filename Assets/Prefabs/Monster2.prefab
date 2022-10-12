@@ -151,6 +151,7 @@ MonoBehaviour:
   Hp: 2
   Power: 2
   Coin: 2
+  Score: 20
 --- !u!95 &1901849699
 Animator:
   serializedVersion: 4

@@ -14,8 +14,11 @@ public class LevelManager : MonoBehaviour
 
     public int Coin { get; set; } = 0;
 
+    public int Score { get; set; } = 0;
+
     public bool _isStarting = false;
     public bool IsStarting { get => _isStarting; set => _isStarting = value ; }
+    
 
     private Queue<GameObject> enemyPreparedQueue = new Queue<GameObject>();
 
@@ -139,5 +142,11 @@ public class LevelManager : MonoBehaviour
     {
         Coin += coin;
         FindObjectOfType<PlaySceneUIManager>().SetCoinText(this.Coin);
+    }
+
+    public void AddScore(int score)
+    {
+        Score += score;
+        FindObjectOfType<PlaySceneUIManager>().SetScoreText(this.Score);
     }
 }
