@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
         
         //LevelManager.Instance.AddCoin(Coin);
     }
-
+  
 
     // call by animation event
     private void DestorySelf()

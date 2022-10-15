@@ -35,6 +35,7 @@ public class MainSceneManager : MonoBehaviour
     public void OnExitBtn()
     {
         SoundManager.Instance.Play("ButtonClick");
+        Application.Quit();
     }
 
     public void OnBackBtn()
