@@ -13,6 +13,8 @@ public class PlaySceneUIManager : MonoBehaviour
 
     public GameObject Pause;
     public GameObject Resume;
+    public GameObject BackButton;
+    public GameObject GameoverText;
 
     [SerializeField]
     private GameObject PlayPannel;
@@ -26,6 +28,8 @@ public class PlaySceneUIManager : MonoBehaviour
     void Start()
     {
         ReviewUI();
+        SoundManager.Instance.StopAllSounds();
+        SoundManager.Instance.Play("Background2");
     }
 
     // Update is called once per frame
@@ -36,20 +40,26 @@ public class PlaySceneUIManager : MonoBehaviour
 
     public void OnSettingBtn()
     {
+        SoundManager.Instance.Play("ButtonClick");
         GameEndPannel.SetActive(true);
         GameOverScoreText.text = "Score : " + LevelManager.Instance.Score.ToString();
+        BackButton.SetActive(true);
+        GameoverText.SetActive(false);
         Time.timeScale = 0;
     }
 
     public void OnClickBackBtn()
     {
+        SoundManager.Instance.Play("ButtonClick");
         GameEndPannel.SetActive(false);
-        
+        BackButton.SetActive(false);
+        GameoverText.SetActive(true);
         Time.timeScale = 1;
     }
 
     public void OnPauseBtn()
     {
+        SoundManager.Instance.Play("ButtonClick");
         Pause.SetActive(false);
         Resume.SetActive(true);
         Time.timeScale = 0;
@@ -57,6 +67,7 @@ public class PlaySceneUIManager : MonoBehaviour
 
     public void OnResumBtn()
     {
+        SoundManager.Instance.Play("ButtonClick");
         Pause.SetActive(true);
         Resume.SetActive(false);
         Time.timeScale = 1;
@@ -64,6 +75,7 @@ public class PlaySceneUIManager : MonoBehaviour
 
     public void OnToMainBtn()
     {
+        SoundManager.Instance.Play("ButtonClick");
         SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 
@@ -75,6 +87,7 @@ public class PlaySceneUIManager : MonoBehaviour
         PowerUpPrice++;
         PowerUpCoinText.text = PowerUpPrice.ToString();
         FindObjectOfType<Player>().WeaponPowerUp();
+        SoundManager.Instance.Play("PowerUp");
         ReviewUI();
     }
 
@@ -102,7 +115,17 @@ public class PlaySceneUIManager : MonoBehaviour
     public void ReviewUI()
     {
         CoinText.text = LevelManager.Instance.Coin.ToString();
-        ScoreText.text = LevelManager.Instance.Score.ToString();
+        ScoreText.text = "Score : " + LevelManager.Instance.Score.ToString();
         PowerUpCoinText.text = PowerUpPrice.ToString();
+    }
+
+    public void GameOver()
+    {
+        //SoundManager.Instance.Play("ButtonClick");
+        GameEndPannel.SetActive(true);
+        GameOverScoreText.text = "Score : " + LevelManager.Instance.Score.ToString();
+        //BackButton.SetActive(true);
+        GameoverText.SetActive(true);
+        Time.timeScale = 0;
     }
 }

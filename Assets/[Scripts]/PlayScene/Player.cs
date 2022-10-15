@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 //using UnityEngine.UIElements;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System;
 
 public class Player : MonoBehaviour
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
         weapon = GetComponentInChildren<Weapon>();
         SetHp(Hp);
         bound.SetMinMax(new Vector2(-20.0f, -6.0f), new Vector2(-15.0f, 3.0f));
+        weapon.SetWeaponRotation(Vector2.right);
     }
 
     // Update is called once per frame
@@ -57,9 +59,51 @@ public class Player : MonoBehaviour
             weapon.SetWeaponRotation(Vector2.right);
         }
 
+#endif
+#if UNITY_ANDROID
+
+        if (Input.touchCount > 0)
+        {
+            foreach(Touch touch in Input.touches)
+            {
+                if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                {
+                    break;
+                }
+
+                if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+                {
+                    Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, Camera.main.WorldToScreenPoint(transform.position).z));
+
+                    if (touchPosition.x <= - 13.0f)
+                    {
+                        Vector2 newPosition = touchPosition;
+                        if (touchPosition.y > bound.max.y)
+                        {
+                            newPosition.y = bound.max.y;
+                        }
+                        if (touchPosition.y < bound.min.y)
+                        {
+                            newPosition.y = bound.min.y;
+                        }
+                        transform.position = new Vector2(transform.position.x, newPosition.y);
+                    }
+                    else
+                    {
+                        directionToMousePoint = touchPosition - weapon.GetMuzzlePosition().position;
+                        directionToMousePoint.Normalize();
+                        weapon.SetWeaponRotation(directionToMousePoint);
+
+                    }
+
+                }
+            }
+            
+        }
+
+
 
 #endif
-
 
 
         if (Hp <= 0)
@@ -72,7 +116,7 @@ public class Player : MonoBehaviour
 
     private void GameOver()
     {
-        FindObjectOfType<PlaySceneUIManager>().OnSettingBtn();
+        FindObjectOfType<PlaySceneUIManager>().GameOver();
     }
 
     public void WeaponPowerUp()

@@ -28,6 +28,7 @@ public class CoinDropped : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         LevelManager.Instance.AddCoin(CoinValue);
+        SoundManager.Instance.Play("Coin");
         Destroy(this.gameObject);
 
     }

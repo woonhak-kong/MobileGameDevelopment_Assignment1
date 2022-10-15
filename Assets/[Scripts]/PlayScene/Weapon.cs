@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
 
     public GameObject projectilePrefab;
+    public GameObject gunExplosionPrefab;
     public GameObject bulletsParrent;
 
     [SerializeField]
@@ -72,6 +73,11 @@ public class Weapon : MonoBehaviour
             GameObject bullet = Instantiate(projectilePrefab, muzzlePosition.position, muzzlePosition.rotation);
             bullet.transform.SetParent(bulletsParrent.transform);
             bullet.GetComponent<Projectile>().SetPower(power);
+
+            GameObject explo = Instantiate(gunExplosionPrefab);
+            explo.transform.position = muzzlePosition.position;
+
+            SoundManager.Instance.Play("Shoot");
         }
     }
 
@@ -88,7 +94,7 @@ public class Weapon : MonoBehaviour
 
     public void PowerUp()
     {
-        power += 0.1f;
+        power += 0.02f;
     }
 
     public Transform GetMuzzlePosition()

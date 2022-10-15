@@ -9,12 +9,14 @@ public class EnemySpawnManager : MonoBehaviour
     //public GameObject[] EnemyPrefabs;
     public GameObject enemyParent;
 
-    [SerializeField]
-    private Transform[] SpawnPoint;
+    //[SerializeField]
+    //private Transform[] SpawnPoint;
     [SerializeField]
     private float SpawnRate;
     [SerializeField]
     LinkedList<GameObject> EnemyList;
+
+    private Bounds spawnBound;
 
     private int orderInLayer = 0;
 
@@ -33,6 +35,7 @@ public class EnemySpawnManager : MonoBehaviour
     void Start()
     {
         EnemyList = new LinkedList<GameObject>();
+        spawnBound.SetMinMax(new Vector2(23.0f, 1.5f), new Vector2(23.0f, -6.5f));
         //StartCoroutine(SpawnEnemies());
     }
 
@@ -50,28 +53,31 @@ public class EnemySpawnManager : MonoBehaviour
     IEnumerator SpawnEnemies()
     {
         int[] temp = new int[2] {-1,-1};
+        orderInLayer = 0;
         while (LevelManager.Instance.IsStarting)
         {
             int randomRangeForSpawn = 0;
             yield return new WaitForSeconds(SpawnRate);
-            do
-            {
-                randomRangeForSpawn = Random.Range(0, SpawnPoint.Length);
+            //do
+            //{
+            //    randomRangeForSpawn = Random.Range(0, SpawnPoint.Length);
 
-            }
-            while (temp[0] == randomRangeForSpawn || temp[1] == randomRangeForSpawn);
-            temp[0] = temp[1];
-            temp[1] = randomRangeForSpawn;
+            //}
+            //while (temp[0] == randomRangeForSpawn || temp[1] == randomRangeForSpawn);
+            //temp[0] = temp[1];
+            //temp[1] = randomRangeForSpawn;
             //print("WaitAndPrint " + Time.time);
             GameObject enemy = LevelManager.Instance.DequeueEnemyFromQueue();
             if (enemy != null)
             {
                 //GameObject enemy = Instantiate(EnemyPrefabs[0], SpawnPoint[randomRangeForSpawn].position, EnemyPrefabs[0].transform.rotation);
-                enemy.transform.position = SpawnPoint[randomRangeForSpawn].position;
+                float positionY = Random.Range(spawnBound.min.y, spawnBound.max.y);
+                Vector2 enemyPosition = new Vector2(spawnBound.min.x, positionY);
+                enemy.transform.position = enemyPosition;
                 enemy.transform.rotation = enemy.transform.rotation;
                 enemy.transform.SetParent(enemyParent.transform);
                 enemy.SetActive(true);
-                enemy.GetComponent<Renderer>().sortingOrder = orderInLayer++;
+                enemy.GetComponent<Renderer>().sortingOrder = orderInLayer--;
                 EnemyList.AddLast(enemy);
                 SortEnemyListByTransport();
             }

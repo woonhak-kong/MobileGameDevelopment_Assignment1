@@ -14,32 +14,32 @@ public class MainSceneManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        SoundManager.Instance.StopAllSounds();
+        SoundManager.Instance.Play("Background1");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnStartBtn()
     {
+        SoundManager.Instance.Play("ButtonClick");
         SceneManager.LoadScene("PlayScene", LoadSceneMode.Single);
     }
 
     public void OnInstructionBtn()
     {
+        SoundManager.Instance.Play("ButtonClick");
         MainPannel.SetActive(false);
         InstructionPannel.SetActive(true);
     }
 
     public void OnExitBtn()
     {
-
+        SoundManager.Instance.Play("ButtonClick");
     }
 
     public void OnBackBtn()
     {
+        SoundManager.Instance.Play("ButtonClick");
         MainPannel.SetActive(true);
         InstructionPannel.SetActive(false);
     }

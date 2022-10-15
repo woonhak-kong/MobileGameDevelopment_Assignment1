@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8435692037034806062}
   - component: {fileID: 8435692037034806058}
   - component: {fileID: 8435692037034806061}
-  - component: {fileID: 8435692037034806060}
   - component: {fileID: 1901849699}
+  - component: {fileID: -5278732584720130864}
   m_Layer: 7
   m_Name: Monster1
   m_TagString: Enemy
@@ -135,23 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2844744, y: 2}
   m_EdgeRadius: 0
---- !u!114 &8435692037034806060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8435692037034806049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1edbe364c56ca544391fa0cb4eba4333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 3
-  Hp: 1
-  Power: 1
-  Coin: 1
-  Score: 10
 --- !u!95 &1901849699
 Animator:
   serializedVersion: 4
@@ -172,3 +155,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5278732584720130864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435692037034806049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c420b619a20264c45a537e196782d7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 3
+  Hp: 3
+  Power: 1
+  Coin: 1
+  Score: 10

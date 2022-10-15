@@ -9,8 +9,10 @@ public class LevelManager : MonoBehaviour
     public GameObject PreparedEnemies;
     public GameObject CoinPrefab;
     public GameObject CoinParent;
+    public GameObject LevelText;
+    public GameObject PlayerPannel;
 
-    public int Level { get; set; } = 1;
+    public int Level { get; set; } = 20;
 
     public int Coin { get; set; } = 0;
 
@@ -61,7 +63,7 @@ public class LevelManager : MonoBehaviour
     {
         int numOfEnemies = 100 + (Level/5) * 2;
         int StrongestEnemyIdx = Level / 10;
-        float ratioOfEnemy = Level < 10 ? 1.0f : Level % 10;
+        float ratioOfEnemy = Level < 10 ? 1.0f : (Level % 10) / 10.0f + 0.1f;
         for (int i = 0; i < numOfEnemies; i++)
         {
             float randNum = Random.Range(0.0f, 1.0f);
@@ -78,6 +80,9 @@ public class LevelManager : MonoBehaviour
     private IEnumerator StartLevelSequence()
     {
         yield return null;
+        GameObject levelText = Instantiate(LevelText, PlayerPannel.transform);
+        levelText.GetComponent<TMPro.TextMeshProUGUI>().text = "Level " + Level.ToString();
+        //levelText.transform.parent = PlayerPannel.transform;
         // build enemy
         BuildEnemies();
         // 5 second waiting animation
@@ -99,8 +104,8 @@ public class LevelManager : MonoBehaviour
             GameObject coin = Instantiate(CoinPrefab, CoinParent.transform);
             coin.transform.position = new Vector2(Random.Range(-10.0f, 17.0f), -2.0f);
             numOfCoins--;
-            coin.GetComponent<CoinDropped>().SetCoinValue(10);
-            yield return new WaitForSeconds(0.01f);
+            coin.GetComponent<CoinDropped>().SetCoinValue(1);
+            yield return new WaitForSeconds(0.005f);
         }
         yield return null;
         StartCoroutine(StartLevelSequence());

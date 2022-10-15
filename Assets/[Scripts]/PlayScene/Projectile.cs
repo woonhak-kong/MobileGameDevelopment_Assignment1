@@ -45,7 +45,7 @@ public class Projectile : MonoBehaviour
         }
         GameObject explo = Instantiate(ExplosionPrefab);
         explo.transform.position = transform.position;
-        
+        SoundManager.Instance.Play("Bum");
         Destroy(this.gameObject);
     }
 
