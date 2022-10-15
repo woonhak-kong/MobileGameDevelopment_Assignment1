@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     public GameObject LevelText;
     public GameObject PlayerPannel;
 
-    public int Level { get; set; } = 20;
+    public int Level { get; set; } = 1;
 
     public int Coin { get; set; } = 0;
 
@@ -63,6 +63,8 @@ public class LevelManager : MonoBehaviour
     {
         int numOfEnemies = 100 + (Level/5) * 2;
         int StrongestEnemyIdx = Level / 10;
+        if (StrongestEnemyIdx > 2)
+            StrongestEnemyIdx = 2;
         float ratioOfEnemy = Level < 10 ? 1.0f : (Level % 10) / 10.0f + 0.1f;
         for (int i = 0; i < numOfEnemies; i++)
         {
