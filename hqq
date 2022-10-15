@@ -1,0 +1,34 @@
+* [1;34ma5fb5e4[m - [1;32m(2 seconds ago)[m [37mbug fixed[m [2;37m- WoonHak Kong[m[1;33m (HEAD -> main)[m
+* [1;34mee2fb21[m - [1;32m(57 minutes ago)[m [37mExit implemented[m [2;37m- WoonHak Kong[m[1;33m (origin/main)[m
+* [1;34mc32265b[m - [1;32m(2 hours ago)[m [37mLevel is modified[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mbeb6a23[m - [1;32m(2 hours ago)[m [37mSounds are added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m4b2f327[m - [1;32m(3 days ago)[m [37mPlay Scene background added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m3230d80[m - [1;32m(3 days ago)[m [37mLaser is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m8c6c644[m - [1;32m(3 days ago)[m [37mScore is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m048e3f5[m - [1;32m(3 days ago)[m [37mBackground modified[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m831695b[m - [1;32m(4 days ago)[m [37mExplosion added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m6170f82[m - [1;32m(4 days ago)[m [37mspawn sequence is modified[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m25e488a[m - [1;32m(4 days ago)[m [37mUI updated[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m8acf674[m - [1;32m(4 days ago)[m [37mPlayer can be damaged[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m0b321ea[m - [1;32m(5 days ago)[m [37mbug fixed[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34me87b5f6[m - [1;32m(5 days ago)[m [37mCoin system is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mb30be54[m - [1;32m(5 days ago)[m [37mPlayer animation added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m5476041[m - [1;32m(5 days ago)[m [37mMonster2 added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m948b20e[m - [1;32m(5 days ago)[m [37mMonster1 animation is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mea9674b[m - [1;32m(5 days ago)[m [37mMonsters get stronger power in next level[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mc50c798[m - [1;32m(7 days ago)[m [37mLevel Manager is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m9ff39c1[m - [1;32m(9 days ago)[m [37mweapon rotation is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34ma68e02a[m - [1;32m(9 days ago)[m [37mShooting is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m5810011[m - [1;32m(9 days ago)[m [37msorting enemy is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mc851754[m - [1;32m(9 days ago)[m [37mSpawnManager is implemented[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m89c54f7[m - [1;32m(10 days ago)[m [37mEnemy draft is added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mf69142f[m - [1;32m(10 days ago)[m [37mWeapon draft is added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m50e9f17[m - [1;32m(10 days ago)[m [37mProjectile draft is added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m7131204[m - [1;32m(10 days ago)[m [37mCanvas is modified[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mba37b94[m - [1;32m(2 weeks ago)[m [37mInstruction view is modified[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34ma02c3eb[m - [1;32m(2 weeks ago)[m [37mUI updated[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mdfc3f39[m - [1;32m(2 weeks ago)[m [37mPlayer and enemy are added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m034d714[m - [1;32m(2 weeks ago)[m [37mBasic UI added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m29f0cac[m - [1;32m(2 weeks ago)[m [37mPlaye Scene ground is added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34mf2e28f2[m - [1;32m(2 weeks ago)[m [37mMainScene is added[m [2;37m- WoonHak Kong[m[1;33m[m
+* [1;34m60c6130[m - [1;32m(2 weeks ago)[m [37mfirst commit[m [2;37m- WoonHak Kong[m[1;33m[m

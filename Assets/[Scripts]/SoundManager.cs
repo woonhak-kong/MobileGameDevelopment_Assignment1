@@ -29,7 +29,8 @@ public class SoundManager : MonoBehaviour
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
         }
-        AudioListener.volume = 0.02f;
+        // master volume
+        //AudioListener.volume = 0.02f;
     }
 
 
